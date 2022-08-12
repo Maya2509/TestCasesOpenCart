@@ -25,7 +25,7 @@ public class changeCurrency {
     System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30000));
     js = (JavascriptExecutor) driver;
   }
 
@@ -34,11 +34,11 @@ public class changeCurrency {
     driver.get("http://localhost/opencartsite/index.php?route=checkout/cart&language=en-gb");
     driver.findElement(By.xpath("//img[@alt='Your Store']")).click();
     driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
-    driver.findElement(By.xpath("//form[@id='form-currency']/div/a/span")).click();
+    driver.findElement(By.xpath("//*[@id=\"form-currency\"]/div/a")).click();
     driver.findElement(By.linkText("$ US Dollar")).click();
     driver.findElement(By.xpath("//form[@id='form-currency']/div")).click();
     driver.findElement(By.xpath("//form[@id='form-currency']/div/a/span")).click();
-    driver.findElement(By.linkText("€ Euro")).click();
+    driver.findElement(By.xpath("//*[@id=\"form-currency\"]/div/ul/li[1]/a")).click();
     driver.findElement(By.xpath("//form[@id='form-currency']/div/a/span")).click();
     driver.findElement(By.linkText("£ Pound Sterling")).click();
     driver.findElement(By.xpath("//form[@id='form-currency']/div/a/span")).click();

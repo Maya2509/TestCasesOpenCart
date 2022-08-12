@@ -23,7 +23,7 @@ public class testFiltros {
     System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300000));
     js = (JavascriptExecutor) driver;
   }
 

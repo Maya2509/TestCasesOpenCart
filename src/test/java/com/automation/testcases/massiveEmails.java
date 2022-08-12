@@ -40,19 +40,19 @@ public class massiveEmails {
     driver.findElement(By.id("input-password")).sendKeys("admin");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     driver.findElement(By.xpath("//div[@id='modal-security']/div/div/div/button")).click();
-    //AGREGR MENU
-    driver.findElement(By.linkText("Marketing")).click();
-    driver.findElement(By.linkText("Mail")).click();
+    driver.findElement(By.xpath("//*[@id=\"button-menu\"]")).click();
+    driver.findElement(By.xpath("//*[@id=\"menu-marketing\"]/a")).click();      
+    driver.findElement(By.xpath("//*[@id=\"collapse-6\"]/li[2]/a")).click();  
+    driver.findElement(By.xpath("/html/body/div[1]/nav/ul/li[7]/ul/li[4]/a"));
+    driver.findElement(By.xpath("/html/body/div[1]/nav/ul/li[7]/ul/li[4]/a")).click();
     driver.findElement(By.id("input-store")).click();
     driver.findElement(By.id("input-to")).click();
     new Select(driver.findElement(By.id("input-to"))).selectByVisibleText("All Customers");
     driver.findElement(By.id("input-subject")).click();
     driver.findElement(By.id("input-subject")).clear();
     driver.findElement(By.id("input-subject")).sendKeys("QA Test");
-    //ERROR: Caught exception [ERROR: Unsupported command [selectFrame | index=0 | ]]
-    driver.findElement(By.xpath("//html")).click();
-    //ERROR: Caught exception [unknown command [editContent]]
-    //ERROR: Caught exception [ERROR: Unsupported command [selectFrame | relative=parent | ]]
+    driver.findElement(By.xpath("/html/body/p")).click();
+    driver.findElement(By.xpath("/html/body/p")).sendKeys("QA Test");
     driver.findElement(By.id("button-send")).click();
   }
 

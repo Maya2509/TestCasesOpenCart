@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.io.File;
 import java.time.Duration;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 public class giftCertificates {
   private WebDriver driver;
@@ -32,6 +34,8 @@ public class giftCertificates {
   public void testGiftCertificates() throws Exception {
     driver.get("http://localhost/opencartsite/index.php?route=common/home&language=en-gb");
     driver.findElement(By.xpath("//img[@alt='Your Store']")).click();
+    WebElement element = driver.findElement(By.xpath("/html/body/footer/div/div/div[3]/ul/li[2]/a"));
+    js.executeScript("arguments[0].scrollIntoView(true);",element);
     driver.findElement(By.xpath("/html/body/footer/div/div/div[3]/ul/li[2]/a")).click();
     driver.get("http://localhost/opencartsite/index.php?route=checkout/voucher&language=en-gb");
     driver.findElement(By.id("input-to-name")).click();
