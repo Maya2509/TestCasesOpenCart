@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automation.testcases.massiveEmails">
+      <class name="com.automation.testcases.checkoutProcess">
         <methods>
           <include name="tearDown"/>
-          <include name="testMassiveEmails"/>
           <include name="setUp"/>
+          <include name="testCheckout"/>
         </methods>
-      </class> <!-- com.automation.testcases.massiveEmails -->
+      </class> <!-- com.automation.testcases.checkoutProcess -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
